@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+    <script src="/scripts/script_home.js" defer></script>
+
+    <title>Document</title>
+</head>
+<body>
+
+    {{#if userAuthLogged}}
+        <span id="userAuthLogged">true</span>
+    {{/if}}
+
+    <header id="header">
+        {{!-- Icon user --}}
+        <i id="btn-user" class="fi fi-rr-circle-user"></i>
+        <span id="info-login">Área de login</span>
+
+        <ul>
+            <li><a href="#section-banner">Home</a></li>
+            <li><a href="#section-sobre">Sobre Nós</a></li>
+            <li><a href="#section-services">Nossos serviços</a></li>
+        </ul>
+    </header>
+
+    <nav id="navbar" class="nav-off">
+        <article id="widget-profile">
+
+            <article id="container-login">
+                <div class="class-widget-profile">
+                    <a href="/view-profile">Ver perfil <img src="/images/perfil.gif" alt="profile gif"></h4></a>
+                </div>
+
+                <div class="class-widget-profile">
+                    <a href="/login">Logar <img src="/images/entrar.gif" alt="logar gif"></a>
+                </div>
+
+                <div class="class-widget-profile">
+                    <a href="/cadaster">Cadastrar <img src="/images/cadastrar.gif" alt="cadastrar gif"></a>
+                </div>
+            </article>
+
+        </article>
+
+    </nav>
+
+    <main>
+
+        <section class="section-page" id="section-banner">
+            {{!-- Banner --}}
+            <section class="article-banner" id="container-banner">
+                <div id="container-image-banner">
+                    <img src="./images/image-banner.jpg" alt="img banner">
+                </div>
+                
+
+                <div id="banner-container-apresentation">
+                    <header id="header-apresentation">
+                        <img src="/images/fisica.gif" alt="image fisica">
+
+                        <h2>Massoterapia</h2>
+                    </header>
+                    
+
+                    <div id="container-text">
+                        <h3>Seja bem-vindo à Massoterapia !</h3>
+                        
+                        <h4>O seu refúgio de relaxamento e bem-estar!</h4>
+
+                        <p>Estamos empenhados em oferecer uma experiência única e rejuvenescedora através de uma variedade de massagens terapêuticas especializadas.</p>
+                    </div>
+                </div>
+            </section>
+
+
+
+            {{!-- Banner cards --}}
+            <section class="article-banner" id="container-cards-banner">
+                <article id="container-field-cards">
+
+                    <div class="card">
+                        <img src="/images/woman-massage2.jpg" alt="image woman">
+                    </div>
+
+                    <div class="card">
+                        <img src="/images/woman-massage1.jpg" alt="image woman">
+                    </div>
+
+                    <div class="card">
+                        <img src="/images/product-massage.jpg" alt="image product">
+                    </div>
+                </article>
+            </section>
+
+        </section>
+
+
+        <section id="section-sobre" class="section-page">
+
+            <section id="container-about-text">
+                <header id="header-about-text">
+                    <h2>Sobre nós...</h2>
+                    <i class="fi fi-ss-info"></i>
+                </header>
+
+                <article id="field-about-text">
+                    <h3>Aqui na massoterapia, nossa missão é:</h3>
+
+                    <p class="text-about">Proporcionar a cada cliente um momento de tranquilidade e alívio do estresse do dia a dia.</p>
+
+                    <p class="text-about">Nossos terapeutas altamente treinados e experientes estão dedicados a ajudá-lo a alcançar o equilíbrio físico e mental que você merece.</p>
+                </article>
+                
+                <article id="container-social-media">
+                    {{!-- Icon logo instagram --}}
+                    <i class="fi fi-brands-instagram"></i>
+
+                    {{!-- Icon logo facebook --}}
+                    <i class="fi fi-brands-facebook"></i>
+
+                    {{!-- Icon logo twitter --}}
+                    <i class="fi fi-brands-twitter-alt"></i>
+
+                    {{!-- Icon logo whatsapp --}}
+                    <i class="fi fi-brands-whatsapp"></i>
+                </article>
+            </section>
+
+            <section id="container-cards-about">
+                <article id="field-card-about">
+                    <div class="card-about">
+                        <img src="/images/woman-massage3.jpg" alt="woman massage">
+                    </div>
+                    <div class="card-about">
+                        <img src="/images/product-massage2.jpg" alt="product massage">
+                    </div>
+                </article>
+
+                <div id="container-img-about">
+                    <img src="/images/wallpaper-nature.jpg" alt="wallpaper nature">
+                </div>
+            </section>
+
+        </section>
+
+
+        <section id="section-services" class="section-page">
+
+            <header id="header-services">
+                <h2>Confira alguns de nossos serviços!</h2>
+            </header>
+
+            <section id="container-services-card">
+                {{!-- Card Service 01 --}}
+                <article class="card-service">
+                    <id class="circle-img-service">
+                        <img src="/images/massage-photo1.jpg" alt="massage photo">
+                    </id>
+                    <h3>Massagem com Pedras Quentes</h3>
+
+                    <div class="card-description">
+                        <p>Experimente o calor reconfortante das pedras aquecidas enquanto nossos terapeutas especializados aliviam a tensão muscular e promovem a circulação sanguínea.</p>
+                    </div>
+
+                    <a href="/view-profile">Clique aqui para agendar <img class="img-validate" src="/images/verificado.gif" alt="validade gif"></a>
+                </article>
+                
+                {{!-- Card Service 02 --}}
+                <article class="card-service">
+                    <id class="circle-img-service">
+                        <img src="/images/massage-photo2.jpg" alt="">
+                    </id>
+                    <h3>Massagem de Aromaterapia</h3>
+
+                    <div class="card-description">
+                        <p>Deixe-se envolver pelos aromas calmantes e terapêuticos dos óleos essenciais enquanto desfruta de uma massagem relaxante que nutre tanto o corpo quanto a mente.</p>
+                    </div>
+
+                    <a href="/view-profile">Clique aqui para agendar <img class="img-validate" src="/images/verificado.gif" alt="validade gif"></a>
+                </article>
+
+                {{!-- Card Service 03 --}}
+                <article class="card-service">
+                    <id class="circle-img-service">
+                        <img src="/images/massage-photo3.png" alt="">
+                    </id>
+                    <h3>Massagem Esportiva</h3>
+
+                    <div class="card-description">
+                        <p>Projetada para atletas e entusiastas do fitness, esta massagem focada em técnicas específicas ajuda na recuperação muscular, melhora a flexibilidade e reduz o risco de lesões.</p>
+                    </div>
+
+                    <a href="/view-profile">Clique aqui para agendar <img class="img-validate" src="/images/verificado.gif" alt="validade gif"></a>
+                </article>
+
+                {{!-- Card Service 04 --}}
+                <article class="card-service">
+                    <id class="circle-img-service">
+                        <img src="/images/massage-photo4.jpg" alt="">
+                    </id>
+                    <h3>Massagem de Ponto-Gatilho</h3>
+
+                    <div class="card-description">
+                        <p>Destinada a aliviar pontos de tensão específicos no corpo, esta técnica terapêutica concentra-se em áreas de dor ou rigidez para promover o alívio imediato e duradouro.</p>
+                    </div>
+
+                    <a href="/view-profile">Clique aqui para agendar <img class="img-validate" src="/images/verificado.gif" alt="validade gif"></a>
+                </article>
+            </section>
+
+        </section>
+
+        <footer>
+            <article class="card-footer">
+                <h2>Contato:</h2>
+
+                <ul>
+                    <li><i class="fi fi-ss-marker"></i> Endereço: Rua das Flores, 123 - Centro</li>
+                    <li><i class="fi fi-rr-phone-call"></i> Telefone: (11) 2234-5678</li>
+                    <li><i class="fi fi-brands-whatsapp"></i> WhatsApp: (11) 98876-5432</li>
+                </ul>
+            </article>
+
+            <article class="card-footer">
+                <h2>Redes sociais:</h2>
+
+                <ul>
+                    <li><i class="fi fi-brands-instagram"></i> Instagram: @maosmagicasmassagem</li>
+                    <li><i class="fi fi-brands-facebook"></i> Facebook: /maosmagicasmassagem</li>
+                </ul>
+            </article>
+        </footer>
+
+        <section id="container-button-float">
+            <article id="field-button-float">
+                <div class="button-float">
+                    <a href="#header"><i class="fi fi-sr-home"></i></a>
+                </div>
+                <p class="text-btn-info">Voltar para o topo</p>
+
+                <div class="button-float">
+                    <a href="/agendamentos"><img src="/images/agenda.gif" alt="gif agenda"></a>
+                </div>
+                <p class="text-btn-info">Agendamentos</p>
+            </article>
+        </section>
+
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+</body>
+</html>

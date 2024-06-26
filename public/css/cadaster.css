@@ -1,0 +1,356 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+}
+
+#userAuthLogged{
+    display: none;
+}
+
+#userAlreadyExists{
+    display: none;
+}
+
+main{
+    background-image: url(../images/bgNature.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20rem;
+}
+
+
+#section-text{
+    width: 40%;
+    height: 40%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#section-text h1{
+    width: 100%;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px black;
+    text-align: center;
+}
+#section-text h2{
+
+    width: 100%;
+    color: #FF9BD2;
+    font-size: 55px;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px black;
+    text-align: center;
+}
+#section-text .text-apresentation{
+    margin-top: 2rem;
+    background-color: #ffffff95;
+    border-radius: 10px;
+    width: 83%;
+    height: auto;
+    padding: 1rem 0;
+    color: black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#section-text p{
+    font-weight: bold;
+    text-align: center;
+}
+
+#section-text h3{
+    width: 100%;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    /* text-shadow: 1px 1px 10px black; */
+    text-align: center;
+}
+
+
+#container-button-float{
+    margin-top: 8rem;
+    width: 35%;
+    height: 5rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.div-button-float{
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    width: 5rem;
+    height: 5rem;
+    
+    border-radius: 100%;
+    box-shadow: 2px 2px 10px black;
+}
+.div-button-float:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+.div-button-float a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.div-button-float i{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 40px;
+    color: rgb(8, 224, 224);
+}
+
+
+
+
+#section-form{
+    background-color: #ffffffb0;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    width: 25%;
+    height: 75%;
+    
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#header-form{
+    width: 80%;
+    height: 20%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.244);
+}
+
+#header-form  i{
+    font-size: 70px;
+    
+    width: 50%;
+    height: 15%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#info-cadaster{
+    width: 95%;
+    font-size: 13px;
+    margin-top: -1.5rem;
+
+    color: rgba(0, 0, 0, 0.701);
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+    padding: 3px;
+
+    text-align: center;
+}
+
+.style-empty-credentials{
+    background-color: rgba(255, 166, 0, 0.555);
+}
+
+.style-password-not-equals{
+    background-color: rgba(255, 0, 0, 0.501);
+}
+
+
+
+#text-info-back-end{
+    background-color: rgba(7, 122, 254, 0.454);
+    padding: 3px 0.7rem;
+    border-radius: 5px;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#auth{
+    display: none;
+}
+
+
+
+form{
+    width: 80%;
+    height: 80%;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* CLasse de estilos para os campos de input */
+.field-class-input{
+    background-color: transparent;
+    
+    width: 100%;
+    height: 11%;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.field-class-input i:nth-child(1){
+    background-color: #fff;
+    text-shadow: 2px 2px 10px #FF9BD2;
+    color: black;
+
+    border-radius: 8px 0 0 8px;
+    width: 15%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.field-class-input input{
+    background-color: #fff;
+    width: 70%;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+
+    border: none;
+    /* border-right: 2px solid black; */
+
+    text-align: center;
+}
+
+
+#icon-eye-pass{
+    color: #FF9BD2;
+    text-shadow: 2px 2px 10px black;
+    width: 14%;
+    height: 100%;
+    
+    font-size: 25px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#icon-eye-pass:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+
+#container-interaction{
+    width: 100%;
+    height: 8%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#container-interaction a{
+    font-size: 15px;
+    color: blue;
+    font-style: italic;
+}
+
+.field-buttons{
+    width: 43%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn{
+    width: 50%;
+    height: 100%;
+    padding: 0 5px;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-weight: bold;
+
+    border: none;
+}
+
+.btn:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.btn:nth-child(1){
+    background-color: black;
+    color: #fff;
+}
+.btn:nth-child(2){
+    background-color: #FF9BD2;
+    color: black;
+}

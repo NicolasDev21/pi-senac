@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/agendamentos.css">
+    <script src="/scripts/script_agendamentos.js" defer></script>
+
+    <title>Agendamentos</title>
+
+
+</head>
+
+<body>
+
+    {{#if notExistsUserSchedule}}
+    <span id="notExistsUserSchedule">true</span>
+    {{/if}}
+
+
+    <main>
+
+        <section id="containerWidget">
+            <article id="widgetDeleteSchedule">
+                <header id="header-deleteSchedule">
+                    <h4>Excluir agendamento</h4>
+                    {{!-- Icon close widget --}}
+                    <i id="btnCloseWidget" class="fi fi-rr-cross-circle"></i>
+                </header>
+
+                <div id="content-widget-delete">
+                    {{!-- Icon lixeira --}}
+                    <i class="fi fi-rr-trash"></i>
+                    <h4 id="info-delete">* Digite o código do agendamento *</h4>
+
+                    <form id="form-delete" action="/agendamentos" method="POST">
+                        <input id="codSchedule" name="codSchedule" type="text" placeholder="Ex: 404">
+                        <input id="btnDelete" name="deleteSchedule" type="submit" value="Excluir">
+                    </form>
+
+                </div>
+            </article>
+        </section>
+
+
+
+        <section id="sidebar-left">
+            <header id="header-sidebar">
+                {{!-- Icon user agendamentos --}}
+                <i class="fi fi-sr-address-book"></i>
+            </header>
+
+            <section id="menu-navigation">
+                {{!-- Icon home --}}
+                <a href="/"><i class="fi fi-rr-home"></i></a>
+
+                {{!-- Icon view profile --}}
+                <a href="/view-profile"><i class="fi fi-rr-user"></i></a>
+            </section>
+        </section>
+
+
+
+        <section id="section-content">
+
+            <header id="header-schedule">
+                {{#with userLoggedData}}
+                <h1>Olá... <span id="span-nameuser">{{username}}</span> !</h1>
+                <h3>Acompanhe todos seus agendamentos aqui! </h3>
+                {{/with}}
+            </header>
+
+            <section id="container-schedules">
+
+                <article id="content-schedules">
+
+                    <div id="div-info-schedules">
+                        <div id="div-icon">
+                            <i class="fi fi-rr-calendar-xmark"></i>
+                            <h1>Oops...</h1>
+                        </div>
+                        <p>Você ainda não realizou nenhum agendamento.</p>
+                    </div>
+
+                    {{#each mapAllSchedules}}
+                    <article class="schedule">
+
+                        <div class="div-image-service">
+                            <img class="img-service" id="img-service" src="{{imageSchedule}}" alt="service image">
+                        </div>
+
+                        <div class="div-info-service">
+                            <h4>Cód. de agendamento:</h4>
+                            <span class="span-id">{{id}}</span>
+                        </div>
+                        <div id="div-info-title" class="div-info-service">
+                            <h4>Título:</h4>
+                            <span id="titleService" class="txt-typeService">{{this.typeService}}</span>
+                        </div>
+                        <div id="div-info-date" class="div-info-service">
+                            <h4>Data:</h4>
+                            <span class="date-schedule">{{this.dateService}}</span>
+                        </div>
+
+                        <div class="interaction-schedule">
+                            {{!-- Icon delete schedule --}}
+                            <i class="fi fi-sr-comment-xmark btnOpenWidget"></i>
+                            <p class="info-delete">Excluir</p>
+                        </div>
+                        
+                    </article>
+                    {{/each}}
+
+                </article>
+
+
+                <section id="content-user-schedules-data">
+                    <header id="header-user-schedules-data">
+                        <div id="div-circle-photo">
+                            <img src="./images/image-profile.jpg" alt="profile image">
+                        </div>
+                    </header>
+
+                    <article class="informations-schedule">
+                        <h5>Agendamentos</h5>
+
+                        {{#with userLoggedData}}
+                        <span id="qtd-schedules">{{agendamentos}}</span>
+                        {{/with}}
+                    </article>
+
+
+                </section>
+
+            </section>
+
+        </section>
+
+
+
+
+
+
+
+    </main>
+</body>
+
+</html>

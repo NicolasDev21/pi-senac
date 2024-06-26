@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/view-profile.css">
+    <script src="/scripts/script_view_profile.js" type="text/javascript" defer></script>
+
+
+    <title>Perfil do usuário</title>
+</head>
+
+<body>
+    {{#if notCheckFicha}}
+    <span id="notCheckFicha">true</span>
+    {{/if}}
+
+    {{#if checkSchedule}}
+        <span id="checkSchedule">true</span>
+    {{/if}}
+
+    <article id="container-information-page">
+        <span id="txt-information-page">Seu agendamento foi concluído com sucesso! :)</span>
+    </article>
+
+    <main>
+        <section id="container-widgets" class="container-widget">
+
+            {{!-- WIDGET EXIT --}}
+            <article id="widget-exit">
+                <div class="header-widget">
+                    <h3 class="title-widget">Confirm exit</h3>
+                    <div id="btn-close-widget-exit" class="div-btn-close-widget">
+                        <img src="/images/btn-close.gif" alt="image btn close">
+                    </div>
+                </div>
+                <div class="field-confirm">
+                    <h2>Tem certeza que deseja sair ?</h2>
+                    <p>Me parece que você não gostou da experiencia conosco. Sinto muito</p>
+
+
+                    <div class="field-btn-confirm">
+                        <input id="btn-cancel-exit" class="btn-cancel" type="reset" value="Cancelar">
+                        <a id="btn-submit-exit" class="btn-submit" href="/exit">Sair</a>
+                    </div>
+
+                    <span id="figure-field-exit" class="figure">:|</span>
+                </div>
+            </article>
+
+
+            {{!-- WIDGET FORM --}}
+            <article id="widget-form-registration">
+
+                <div class="header-widget">
+                    <h3 class="title-widget">Ficha de Anamnese</h3>
+                    <p id="text-info-ficha">* Ficha inválida *</p>
+                </div>
+
+                <form id="send-form-ficha" action="/view-profile" name="ficha" method="POST">
+                    <h3>Preencha a Ficha de Anamnese para continuar:</h3>
+
+                    <p>Clique no botão para fazer o download da ficha</p>
+
+                    <input id="btn-download" name="downloadFicha" type="submit" value="Download">
+                </form>
+
+                <form action="/view-profile" method="POST" id="form-ficha-user">
+
+                    <div id="div-input-sendFile">
+                        <p>Envie sua ficha<br>preenchida: </p>
+                        <input type="file" name="fichaUser" id="file-ficha-user">
+                    </div>
+
+                    <input id="btn-send-ficha" name="submit" type="submit" value="Enviar">
+                </form>
+            </article>
+
+
+            {{!-- WIDGET CARD SERVICE --}}
+            <article id="widget-card-service">
+
+                <header id="header-widget-services">
+
+                    <span id="txt-info-schedule">* Selecione um serviço e escolha uma data. *</span>
+
+                    <div id="div-btn-close-widget-service">
+                        <img id="btn-close-schedule" src="/images/btn-close.gif" alt="button close">
+                    </div>
+                </header>
+
+                <form action="/view-profile" name="services" method="POST" id="form-select-service">
+                    <h2>Selecione o serviço que deseja !</h2>
+
+                    <div class="select-service">
+                        <input class="input-radio" id="radio1" type="radio" name="typeService"
+                            value="massagem-com-pedras-quentes">
+                        <p>Massagem com pedras quentes</p>
+                    </div>
+
+                    <div class="select-service">
+                        <input class="input-radio" id="radio2" type="radio" name="typeService"
+                            value="massagem-de-aromaterapia">
+                        <p>Massagem de Aromaterapia</p>
+                    </div>
+
+                    <div class="select-service">
+                        <input class="input-radio" id="radio3" type="radio" name="typeService"
+                            value="massagem-esportiva">
+                        <p>Massagem Esportiva</p>
+                    </div>
+
+                    <div class="select-service">
+                        <input class="input-radio" id="radio4" type="radio" name="typeService"
+                            value="massagem-de-ponto-gatilho">
+                        <p>Massagem de Ponto-Gatilho</p>
+                    </div>
+
+                    <input id="inputDate" type="date" name="dateSchedule">
+                    <input id="btn-submit-schedule" name="submitSchedule" type="submit" value="Agendar">
+                </form>
+
+            </article>
+
+        </section>
+
+
+        <section id="sidebar-left">
+
+            <header id="header-sidebar">
+                {{!-- Icon user --}}
+                <i class="fi fi-sr-circle-user"></i>
+            </header>
+
+            <section id="menu-navigation">
+                {{!-- Icon home --}}
+                <a href="/"><i class="fi fi-rr-home"></i></a>
+
+                {{!-- Icon user agendamentos --}}
+                <a href="/agendamentos"><i class="fi fi-sr-address-book"></i></a>
+            </section>
+
+            <section id="menu-exit">
+                {{!-- Icon exit --}}
+                <i id="btn-exit-account" class="fi fi-sr-exit"></i>
+            </section>
+        </section>
+
+
+        <section id="section-content">
+
+
+            <section id="banner-profile">
+                <article id="container-field-photo">
+                    <div class="circle-photo-profile">
+                        <img src="/images/image-profile.jpg" alt="image profile">
+                    </div>
+                </article>
+
+                <article id="container-interaction-banner">
+                    <section id="informations-banner">
+                        <div class="div-input-search">
+                            <input type="text" name="search" placeholder="Pesquise um serviço">
+                            {{!-- Icon lupa search --}}
+                            <i class="fi fi-rr-search"></i>
+                        </div>
+                    </section>
+                </article>
+            </section>
+
+
+            <section id="container-welcome">
+                <article id="field-welcome">
+
+                    {{#with userLoggedData}}
+                    <h2>Olá, <span id="span-nameuser">{{username}}</span> ! Seja bem vindo(a).</h2>
+                    {{/with}}
+                    <p>Aqui você poderá consultar mais detalhes sobre nossos serviços. Fique a vontade</p>
+
+                </article>
+            </section>
+
+
+
+
+            <section id="section-content-services">
+
+                <header id="header-services">
+                    <div id="title-services">
+                        <h2>Principais serviços...</h2>
+                    </div>
+                </header>
+
+
+
+                <article id="container-services-card">
+
+                    {{!-- Card Service 01 --}}
+                    <article class="card-service">
+                        <id class="circle-img-service">
+                            <img src="/images/massage-photo1.jpg" alt="massage photo">
+                        </id>
+                        <h3>Massagem com Pedras Quentes</h3>
+                        <div class="card-description">
+                            <p>Experimente o calor reconfortante das pedras aquecidas enquanto nossos terapeutas
+                                especializados aliviam a tensão muscular e promovem a circulação sanguínea.</p>
+                        </div>
+                        <p id="link-service1" class="text-link-schedule">Clique aqui para agendar <img
+                                class="img-validate" src="/images/verificado.gif" alt="validade gif"></p>
+                    </article>
+
+
+
+                    {{!-- Card Service 02 --}}
+                    <article class="card-service">
+                        <id class="circle-img-service">
+                            <img src="/images/massage-photo2.jpg" alt="">
+                        </id>
+                        <h3>Massagem de Aromaterapia</h3>
+                        <div class="card-description">
+                            <p>Deixe-se envolver pelos aromas calmantes e terapêuticos dos óleos essenciais enquanto
+                                desfruta de uma massagem relaxante que nutre tanto o corpo quanto a mente.</p>
+                        </div>
+                        <p id="link-service2" class="text-link-schedule">Clique aqui para agendar <img
+                                class="img-validate" src="/images/verificado.gif" alt="validade gif"></p>
+                    </article>
+
+
+
+                    {{!-- Card Service 03 --}}
+                    <article class="card-service">
+                        <id class="circle-img-service">
+                            <img src="/images/massage-photo3.png" alt="">
+                        </id>
+                        <h3>Massagem Esportiva</h3>
+                        <div class="card-description">
+                            <p>Projetada para atletas e entusiastas do fitness, esta massagem focada em técnicas
+                                específicas ajuda na recuperação muscular, melhora a flexibilidade e reduz o risco
+                                de lesões.</p>
+                        </div>
+                        <p id="link-service3" class="text-link-schedule">Clique aqui para agendar <img
+                                class="img-validate" src="/images/verificado.gif" alt="validade gif"></p>
+                    </article>
+
+
+
+                    {{!-- Card Service 04 --}}
+                    <article class="card-service">
+                        <id class="circle-img-service">
+                            <img src="/images/massage-photo4.jpg" alt="">
+                        </id>
+                        <h3>Massagem de Ponto-Gatilho</h3>
+                        <div class="card-description">
+                            <p>Destinada a aliviar pontos de tensão específicos no corpo, esta técnica terapêutica
+                                concentra-se em áreas de dor ou rigidez para promover o alívio imediato e duradouro.
+                            </p>
+                        </div>
+                        <p id="link-service4" class="text-link-schedule">Clique aqui para agendar <img
+                                class="img-validate" src="/images/verificado.gif" alt="validade gif"></p>
+                    </article>
+                </article>
+
+            </section>
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+</body>
+
+</html>

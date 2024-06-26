@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/cadaster.css">
+    <script src="/scripts/script_cadaster.js" type="text/javascript" defer></script>
+
+    <title>Cadaster</title>
+</head>
+
+
+
+<body>
+
+    {{#if userAuthLogged}}
+        <span id="userAuthLogged">true</span>
+    {{/if}}
+
+    {{#if userAlreadyExists}}
+        <p id="userAlreadyExists">true</p>
+    {{/if}}
+    
+
+    <main>
+
+        <section id="section-text">
+            <h1>Seja bem vindo(a) ao...</h1>
+            <h2>Mãos Mágicas Massagem !</h2>
+
+            <div class="text-apresentation">
+                <p>Agradeçemos por escolher nossos serviços.</p>
+                <h3>Faça seu cadastro e aproveite sua primeira experiência conosco.</h3>
+            </div>
+
+            <article id="container-button-float">
+                <div class="div-button-float">
+                    {{!-- Icon home --}}
+                    <a href="/"><i class="fi fi-sr-home"></i></a>
+                </div>
+
+                <div class="div-button-float">
+                    {{!-- Icon cadaster user --}}
+                    <a href="/login"><i class="fi fi-ss-address-card"></i></a>
+                </div>
+            </article>
+        </section>
+
+
+        <section id="section-form">
+            <header id="header-form">
+                <i class="fi fi-rr-user-add"></i>
+
+                <h2>Cadastro</h2>
+            </header>
+
+            <form action="/cadaster" name="formCadaster" method="POST">
+
+                <p id="info-cadaster">
+                    Faça seu cadastro aqui!
+                </p>
+
+                <article id="field-username" class="field-class-input">
+                    <i class="fi fi-rr-user"></i>
+
+                    <input id="input-username" type="text" name="username" placeholder="Informe seu nome de usuário">
+                </article>
+
+                <article id="field-password" class="field-class-input">
+                    <i class="fi fi-ss-key"></i>
+
+                    <input id="input-pass" type="password" name="password" placeholder="Informe sua senha de login">
+                </article>
+
+                <article id="field-confirm-password" class="field-class-input">
+                    <i class="fi fi-sr-lock"></i>
+
+                    <input id="input-confirmPass" type="password" name="passConfirm"
+                        placeholder="Confirme sua senha de login">
+
+                    <i id="icon-eye-pass" class="fi fi-ss-low-vision"></i>
+                </article>
+
+                <article id="container-interaction">
+                    <a href="/login">I already have a registration!</a>
+
+                    <div class="field-buttons">
+                        <input class="btn" type="reset" value="Cancelar">
+                        <input id="btn-submit" class="btn" type="submit" value="Cadastrar">
+                    </div>
+                </article>
+            </form>
+        </section>
+
+    </main>
+
+
+
+</body>
+
+</html>
